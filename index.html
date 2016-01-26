@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Parseobjectserializer by Urucas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Parseobjectserializer</h1>
+      <h2 class="project-tagline">Serialize ParseObject to flat JSON in Android</h2>
+      <a href="https://github.com/Urucas/ParseObjectSerializer" class="btn">View on GitHub</a>
+      <a href="https://github.com/Urucas/ParseObjectSerializer/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/Urucas/ParseObjectSerializer/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="parseobjectserializer" class="anchor" href="#parseobjectserializer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ParseObjectSerializer</h1>
+
+<p>Serialize ParseObject to flat JSON in Android</p>
+
+<h1>
+<a id="import" class="anchor" href="#import" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Import</h1>
+
+<div class="highlight highlight-source-groovy-gradle"><pre><span class="pl-en">repositories</span> {
+<span class="pl-c">// ...</span>
+ maven { url <span class="pl-s"><span class="pl-pds">'</span>http://urucas.github.io/ParseObjectSerializer/<span class="pl-pds">'</span></span>}
+<span class="pl-c">// ...</span>
+}
+
+<span class="pl-en">dependencies</span> {
+    <span class="pl-c">// ...</span>
+    compile <span class="pl-s"><span class="pl-pds">'</span>com.urucas:parseobjectserializer:1.0.1@aar<span class="pl-pds">'</span></span>
+}</pre></div>
+
+<h1>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h1>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">JSONObject</span> json <span class="pl-k">=</span> <span class="pl-smi">Serializer</span><span class="pl-k">.</span>Serialize(myParseObject)
+<span class="pl-c">// output</span>
+{ 
+  <span class="pl-s"><span class="pl-pds">"</span>id<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>a35fe45<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>createdAt<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>updatedAt<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>myLocation<span class="pl-pds">"</span></span><span class="pl-k">:</span> {
+    <span class="pl-s"><span class="pl-pds">"</span>lat<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-k">-</span><span class="pl-c1">32.9479262</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>lng<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-k">-</span><span class="pl-c1">60.6442077</span>
+  },
+  <span class="pl-s"><span class="pl-pds">"</span>myFile<span class="pl-pds">"</span></span><span class="pl-k">:</span> {
+    <span class="pl-s"><span class="pl-pds">"</span>url<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>https://media.giphy.com/media/r6T74LkYSSmoE/giphy.gif<span class="pl-pds">"</span></span>
+  },
+  <span class="pl-s"><span class="pl-pds">"</span>what<span class="pl-pds">"</span></span> <span class="pl-k">:</span> {
+    <span class="pl-s"><span class="pl-pds">"</span>put a bird on that<span class="pl-pds">"</span></span>
+  },
+  <span class="pl-s"><span class="pl-pds">"</span>aNumber<span class="pl-pds">"</span></span> <span class="pl-k">:</span> <span class="pl-c1">2</span>,
+  <span class="pl-s"><span class="pl-pds">"</span>anArray<span class="pl-pds">"</span></span> <span class="pl-k">:</span> [
+    <span class="pl-s"><span class="pl-pds">"</span>withObjects<span class="pl-pds">"</span></span> <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>arrays are cool(?)<span class="pl-pds">"</span></span>
+  ],
+  <span class="pl-s"><span class="pl-pds">"</span>anObject<span class="pl-pds">"</span></span> <span class="pl-k">:</span> {
+    <span class="pl-s"><span class="pl-pds">"</span>current_song<span class="pl-pds">"</span></span> <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Strawerry Fields Forever<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>gnos_tnerruc<span class="pl-pds">"</span></span> <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>reveroF sdleiF yrrewawrtS<span class="pl-pds">"</span></span>
+  },
+  <span class="pl-s"><span class="pl-pds">"</span>iShouldGo2Sleep<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">true</span>
+}</pre></div>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/Urucas/ParseObjectSerializer">Parseobjectserializer</a> is maintained by <a href="https://github.com/Urucas">Urucas</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
