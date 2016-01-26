@@ -61,7 +61,6 @@ public class SerializerTest extends AndroidTestCase {
     public void testParseFile() throws JSONException {
         ParseFile file = new ParseFile(new byte[] { (byte) 0xFF });
         JSONObject json = Serializer.Serialize(file);
-        Log.i("json file", json.toString());
         assertNotNull(json);
         assertEquals(true, json.has("url"));
     }
