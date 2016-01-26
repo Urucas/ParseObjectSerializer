@@ -1,1 +1,1 @@
-include ':serializer'
+include ':serializer', ':serializar-app'
