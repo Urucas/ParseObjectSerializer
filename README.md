@@ -11,6 +11,8 @@ repositories {
 
 dependencies {
     // ...
+    compile 'com.parse.bolts:bolts-android:1.+'
+    compile 'com.parse:parse-android:1.+'
     compile 'com.urucas:parseobjectserializer:1.0.1@aar'
 }
 ```
