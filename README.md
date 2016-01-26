@@ -1,7 +1,19 @@
 # ParseObjectSerializer
 Serialize ParseObject to flat JSON in Android
 
-#Install
+#Import
+```gradle
+repositories {
+// ...
+ maven { url 'http://urucas.github.io/ParseObjectSerializer/'}
+// ...
+}
+
+dependencies {
+    // ...
+    compile 'com.urucas:parseobjectserializer:1.0.1@aar'
+}
+```
 
 #Usage
 ```java
