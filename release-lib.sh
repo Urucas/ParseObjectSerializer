@@ -1,7 +1,7 @@
 #!/bin/bash
 VERSION=$(./gradlew -q Version)
 echo "Project version: ${VERSION}"
-RELEASE_NAME=$"./serializer-${VERSION}.aar"
+RELEASE_NAME=$"./parseobjectserializer-${VERSION}.aar"
 if [ ! -f $RELEASE_NAME ]; then
   echo "buiild release $RELEASE_NAME not found!"
   exit 1

@@ -14,7 +14,7 @@ if [ -d "./build" ]; then
 fi
 echo "building release"
 ./gradlew assembleRelease
-cp ./logcatio/build/outputs/aar/serializer-release.aar $RELEASE_NAME
+cp ./serializer/build/outputs/aar/serializer-release.aar $RELEASE_NAME
 echo "generating pom"
 ./gradlew createPom
 exit 0
